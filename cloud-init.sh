@@ -11,11 +11,8 @@ aws_get_parameter() {
 
 # yummy
 yum update -y
-wget https://bintray.com/kong/kong-rpm/rpm -O bintray-kong-kong-rpm.repo
-sed -i -e 's/baseurl.*/&\/amazonlinux\/amazonlinux2'/ bintray-kong-kong-rpm.repo
-mv bintray-kong-kong-rpm.repo /etc/yum.repos.d/
-yum update -y
-yum install -y kong-${KONG_VERSION}
+curl -Lo kong-${KONG_VERSION}.aws.amd64.rpm "https://download.konghq.com/gateway-2.x-amazonlinux-2/Packages/k/kong-${KONG_VERSION}.aws.amd64.rpm"
+yum install kong-${KONG_VERSION}.aws.amd64.rpm -y --nogpgcheck
 
 # permissions
 
