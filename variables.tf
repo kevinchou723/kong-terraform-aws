@@ -202,7 +202,7 @@ variable "asg_desired_capacity" {
   default = 2
 }
 
-variable "asg_health_check_grace_1iod" {
+variable "asg_health_check_grace_period" {
   description = "Time in seconds after instance comes into service before checking health"
   type        = string
 
