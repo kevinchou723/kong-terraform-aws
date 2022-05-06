@@ -23,6 +23,8 @@ resource "aws_db_instance" "kong" {
   skip_final_snapshot       = var.db_final_snapshot_identifier == "" ? true : false
   final_snapshot_identifier = var.db_final_snapshot_identifier == "" ? null : var.db_final_snapshot_identifier
 
+  rds_deletion_protection = var.rds_deletion_protection
+
   tags = merge(
     {
       "Name"        = format("%s-%s", var.service, var.environment),

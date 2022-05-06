@@ -501,3 +501,8 @@ variable "rds_performance_insights_enabled" {
   default     = true
   type        = bool
 }
+variable "rds_deletion_protection" {
+  description = "enable deletion protection for RDS.  Cannot delete RDS instance until this is set to false"
+  type        = bool
+  default     = false
+}
