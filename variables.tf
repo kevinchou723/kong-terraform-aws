@@ -144,7 +144,7 @@ variable "tags" {
 variable "ec2_ami" {
   description = "Map of Ubuntu Minimal AMIs by region"
   type        = map(string)
-# amazon linux 2 ami's
+  # amazon linux 2 ami's
   default = {
     us-east-1    = "ami-0947d2ba12ee1ff75"
     us-east-2    = "ami-03657b56516ab7912"
@@ -202,7 +202,7 @@ variable "asg_desired_capacity" {
   default = 2
 }
 
-variable "asg_health_check_grace_period" {
+variable "asg_health_check_grace_1iod" {
   description = "Time in seconds after instance comes into service before checking health"
   type        = string
 
@@ -494,5 +494,10 @@ variable "db_final_snapshot_identifier" {
 
 variable "kong_version" {
   description = "kong version CE"
-  default = "2.2.0"
+  default     = "2.2.0"
+}
+variable "rds_performance_insights_enabled" {
+  description = "performance_insights_enabled"
+  default     = true
+  type        = bool
 }
