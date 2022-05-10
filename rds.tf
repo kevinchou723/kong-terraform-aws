@@ -23,7 +23,7 @@ resource "aws_db_instance" "kong" {
   skip_final_snapshot       = var.db_final_snapshot_identifier == "" ? true : false
   final_snapshot_identifier = var.db_final_snapshot_identifier == "" ? null : var.db_final_snapshot_identifier
 
-  deletion_protection = var.rds_deletion_protection
+  deletion_protection = var.enable_deletion_protection
 
   tags = merge(
     {
